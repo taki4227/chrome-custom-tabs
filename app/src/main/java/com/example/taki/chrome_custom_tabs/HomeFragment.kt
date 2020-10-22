@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.taki.chrome_custom_tabs.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -29,6 +30,10 @@ class HomeFragment : Fragment() {
                     SimpleCustomTabActivity::class.java
                 )
             )
+        }
+
+        binding.navToChromeCustomTab.setOnClickListener {
+            findNavController().navigate(R.id.chrome_custom_tabs)
         }
     }
 }

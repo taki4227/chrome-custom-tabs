@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">chrome-custom-tabs</string>
+    <string name="git_hub_url">https://github.com/</string>
 </resources>

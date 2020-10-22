@@ -11,4 +11,8 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
 
+    <customTabs
+        android:id="@+id/chrome_custom_tabs"
+        app:url="@string/git_hub_url" />
+
 </navigation>
