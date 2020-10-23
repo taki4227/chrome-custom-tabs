@@ -23,7 +23,8 @@ class CustomTabsNavigator(
         navOptions: NavOptions?,
         navigatorExtras: Extras?
     ): NavDestination? {
-        val url = requireNotNull(destination.url)
+        val url = if (args != null) CustomTabsArgs.fromBundle(args).url else destination.url
+        requireNotNull(url)
 
         CustomTabsIntent.Builder()
             .setShowTitle(true)
@@ -50,7 +51,7 @@ class CustomTabsNavigator(
             super.onInflate(context, attrs)
 
             context.withStyledAttributes(attrs, R.styleable.CustomTabsNavigator, 0, 0) {
-                url = getString(R.styleable.CustomTabsNavigator_url)
+                url = getString(R.styleable.CustomTabsNavigator_default_url)
             }
         }
     }

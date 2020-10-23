@@ -9,10 +9,18 @@
         android:id="@+id/fragment_home"
         android:name="com.example.taki.chrome_custom_tabs.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/navigate_to_custom_tabs"
+            app:destination="@id/custom_tabs" />
+    </fragment>
 
     <customTabs
-        android:id="@+id/chrome_custom_tabs"
-        app:url="@string/git_hub_url" />
+        android:id="@+id/custom_tabs"
+        app:default_url="@string/git_hub_url">
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </customTabs>
 
 </navigation>

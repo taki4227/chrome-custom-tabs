@@ -33,7 +33,9 @@ class HomeFragment : Fragment() {
         }
 
         binding.navToChromeCustomTab.setOnClickListener {
-            findNavController().navigate(R.id.chrome_custom_tabs)
+            findNavController().navigate(
+                HomeFragmentDirections.navigateToCustomTabs("https://my.au.com/rd/entertainment")
+            )
         }
     }
 }
